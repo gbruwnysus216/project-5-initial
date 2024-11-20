@@ -28,6 +28,19 @@ public class SortingUtilityTest {
                 .collect(Collectors.toList());
     }
 
+    //prompt "write a test case for selection sort"
+    @Test
+    public void testSelectionSort() {
+        Collections.sort(expected);
+        SortingUtility.selectionSort(array);
+
+        List<Integer> actual = Arrays.stream(array)
+                .collect(Collectors.toList());
+
+        boolean result = actual.equals(expected);
+
+        assertTrue(result);
+    }
     @Test
     public void testGnomeSort() {
 
